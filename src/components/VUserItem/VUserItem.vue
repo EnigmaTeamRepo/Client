@@ -1,35 +1,44 @@
 <template>
-    <li class="user-item flex-col">
-        <span class="date">{{registrationDate}}</span>
-        <span class="name">
-            {{ name }}
-        </span>
-        <div>
-            <span class="birthdate">{{berthDate}}</span>
-            <span class="passport">{{passport}}</span>
-            <span class="sex">{{sex}}</span>
+  <li class="user-item flex-col">
+    <span class="date">{{ registrationDate }}</span>
+    <span class="name">
+      {{ name }}
+    </span>
+    <div>
+      <span class="birthdate">{{ berthDate }}</span>
+      <span class="passport">{{ passport }}</span>
+      <span class="sex">{{ sex }}</span>
+    </div>
+    <p class="passport-issued-by">
+      {{ user?.passport_issued_by }}
+    </p>
+    <p class="born-place">
+      {{ user?.born_place }}
+    </p>
 
-        </div>
-        <p class="passport-issued-by">
-            {{user?.passport_issued_by}}
-        </p>
-        <p class="born-place">
-            {{user?.born_place}}
-        </p>
+    <div class="actions">
+      <button
+        v-if="isNew"
+        class="action-btn action-btn--warn"
+      >
+        отклонить
+      </button>
+      <button
+        v-if="isNew"
+        class="action-btn"
+      >
+        одобрить
+      </button>
 
-        <div class="actions">
-            <button class="action-btn action-btn--warn" v-if="isNew">отклонить</button>
-            <button class="action-btn" v-if="isNew">одобрить</button>
-
-            <button class="action-btn" 
-                v-if="isActive"
-                :class="{'action-btn--warn': isBlocked}"
-            >
-                {{changeStatusText}}
-            </button>
-
-        </div>
-    </li>
+      <button
+        v-if="isActive" 
+        class="action-btn"
+        :class="{'action-btn--warn': isBlocked}"
+      >
+        {{ changeStatusText }}
+      </button>
+    </div>
+  </li>
 </template>
 <script>
 export default {

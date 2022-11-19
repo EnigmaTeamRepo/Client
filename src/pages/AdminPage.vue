@@ -1,27 +1,45 @@
 <template>
-    <div class="admin">
-        <h1 class="title flex-col">
-            <span>Привет Админ!</span>
-            <span>продуктивной работы 🤖❤️💸</span>
-        </h1>
+  <div class="admin">
+    <h1 class="title flex-col">
+      <span>Привет Админ!</span>
+      <span>продуктивной работы 🤖❤️💸</span>
+    </h1>
 
-        <div class="tabs">
-            <button class="base-button" :class="{'base-button--active': currentUsers === 0}" @click="changeList(0)">заявки</button>
-            <button class="base-button" :class="{'base-button--active': currentUsers === 1}" @click="changeList(1)">подтвержденные</button>
-        </div>
-
-        <VUserList v-if="currentUsers === 0" :users="newUsers" />
-
-        <VUserList v-if="currentUsers === 1" :users="existedUsers" />
+    <div class="tabs">
+      <button
+        class="base-button"
+        :class="{'base-button--active': currentUsers === 0}"
+        @click="changeList(0)"
+      >
+        заявки
+      </button>
+      <button
+        class="base-button"
+        :class="{'base-button--active': currentUsers === 1}"
+        @click="changeList(1)"
+      >
+        подтвержденные
+      </button>
     </div>
+
+    <VUserList
+      v-if="currentUsers === 0"
+      :users="newUsers"
+    />
+
+    <VUserList
+      v-if="currentUsers === 1"
+      :users="existedUsers"
+    />
+  </div>
 </template>
 <script>
     import VUserList from '@/components/VUserList/VUserList.vue'
     export default {
+        name: 'AdminPage',
         components: {
             VUserList
         },
-        name: 'AdminPage',
         data() {
             return {
                 currentUsers: 0,

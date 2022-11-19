@@ -1,13 +1,19 @@
 <template>
-    <div class="input">
-        <slot />
-        <label class="label" :for="id">
-            {{ title }}
-        </label>
-        <div class="error" v-if="error">
-            {{ error }}
-        </div>
+  <div class="input">
+    <slot />
+    <label
+      class="label"
+      :for="id"
+    >
+      {{ title }}
+    </label>
+    <div
+      v-if="error"
+      class="error"
+    >
+      {{ error }}
     </div>
+  </div>
 </template>
 <script>
 export default {

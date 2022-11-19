@@ -1,6 +1,7 @@
 * {
     outline: none;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -50,5 +51,9 @@ input[type="radio"].visually-hidden {
     &--active {
         background: #9578ED;
         color: #ffffff;
+    }
+
+    &--accent {
+        color: #9578ED;
     }
 }

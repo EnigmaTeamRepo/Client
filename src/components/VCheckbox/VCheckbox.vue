@@ -1,14 +1,14 @@
 <template>
-    <label class="checkbox">
-        <input
-            class="visually-hidden"
-            type="checkbox"
-            :disabled="disabled"
-            :checked="checked"
-            @change="$emit('change', $event)"
-        />
-        <span class="checkbox-body"></span>
-    </label>
+  <label class="checkbox">
+    <input
+      class="visually-hidden"
+      type="checkbox"
+      :disabled="disabled"
+      :checked="checked"
+      @change="$emit('change', $event)"
+    >
+    <span class="checkbox-body" />
+  </label>
 </template>
 <script>
 export default {

@@ -6,6 +6,30 @@ const routes = [
         name: 'Home',
         component: () => import('../pages/HomePage.vue'),
         meta: {
+            layout: 'HomeLayout',
+        },
+    },
+    {
+        path: '/Analytics',
+        name: 'Analytics',
+        component: () => import('../pages/AnalyticsPage.vue'),
+        meta: {
+            layout: 'HomeLayout',
+        },
+    },
+    {
+        path: '/PayIn-Out',
+        name: 'PayIn-Out',
+        component: () => import('../pages/PayInOutPage.vue'),
+        meta: {
+            layout: 'HomeLayout',
+        },
+    },
+    {
+        path: '/CreateAccount',
+        name: 'CreateAccount',
+        component: () => import('../pages/CreateAccountPage.vue'),
+        meta: {
             layout: 'DefaultLayout',
         },
     },
@@ -32,7 +56,7 @@ const routes = [
         name: 'AdminPage',
         component: () => import('../pages/AdminPage.vue'),
         meta: {
-            layout: 'AdminLayout',
+            layout: 'HomeLayout',
         },
     },
 ]

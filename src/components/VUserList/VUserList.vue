@@ -1,13 +1,17 @@
 <template>
-    <ul class="user-list flex-col">
-        <VUserItem v-for="user in users" :user="user" :key="user.id"/>
-    </ul>
+  <ul class="user-list flex-col">
+    <VUserItem
+      v-for="user in users"
+      :key="user.id"
+      :user="user"
+    />
+  </ul>
 </template>
 <script>
 import VUserItem from '../VUserItem/VUserItem.vue'
 export default {
-  components: { VUserItem },
     name: 'VUserList',
+  components: { VUserItem },
     props: {
         users: {
             type: Array,

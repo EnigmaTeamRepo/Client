@@ -1,7 +1,7 @@
 <template>
-    <component :is="layout">
-        <slot />
-    </component>
+  <component :is="layout">
+    <slot />
+  </component>
 </template>
 <script>
     export default {
