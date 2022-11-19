@@ -1,0 +1,11 @@
+.pay-in-out {
+    padding-top: 61px;
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 48px;
+    }
+}

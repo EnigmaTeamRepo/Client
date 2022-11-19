@@ -3,6 +3,7 @@
     <button
       class="base-button base-button--accent"
       style="margin-bottom: 24px"
+      @click="back"
     >
       назад
     </button>
@@ -15,7 +16,7 @@
       </div>
       <ul class="flex-col">
         <li
-          class="accout-type"
+          class="accout-type account-preview"
           :class="{'selected': selectedAccount === 840}"
           @click="selectAccount(840)"
         >
@@ -27,7 +28,7 @@
         </li>
 
         <li
-          class="accout-type"
+          class="accout-type account-preview"
           :class="{'selected': selectedAccount === 978}"
           @click="selectAccount(978)"
         >
@@ -40,7 +41,9 @@
       </ul>
     </div>
 
-    <VButton @click="createAccount">создать счет</VButton>
+    <VButton @click="createAccount">
+      создать счет
+    </VButton>
     <p class="condition">
       Нажимая на кнопку “создать счет” вы соглашаетесь с 
       <a
@@ -53,13 +56,14 @@
 <script>
 import VButton from '@/components/VButton/VButton.vue';
 import { ref } from '@vue/reactivity';
+import { useRouter } from 'vue-router';
 
 export default {
   name: "CreateAccountPage",
   components: { VButton },
   setup() {
     const selectedAccount = ref(840)
-
+    const router = useRouter()
     function selectAccount(code) {
       selectedAccount.value = code
     }
@@ -67,10 +71,15 @@ export default {
     function createAccount() {
       alert(selectedAccount.value)
     }
+
+    function back() {
+      router.go(-1)
+    }
     return {
       selectedAccount,
       selectAccount,
-      createAccount
+      createAccount,
+      back
     }
   }
 }

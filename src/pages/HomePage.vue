@@ -13,12 +13,13 @@
         {{ balanceFormatted }}
       </span>
 
-      <button
+      <router-link
         v-if="!user.balance"
+        :to="{name: 'PayIn-Out'}"
         class="base-button base-button--active"
       >
         пополнить баланс
-      </button>
+      </router-link>
       <template v-if="!user.balance">
         <VCurrencyListItem
           :currency-code="643"
