@@ -1,10 +1,15 @@
-<script setup>
-</script>
-
 <template>
-  <h1>App init</h1>
+    <AppLayout>
+        <router-view />
+    </AppLayout>
 </template>
 
-<style>
+<script>
+import AppLayout from './layouts/AppLayout.vue';
 
-</style>
+
+export default {
+    name: "App",
+    components: { AppLayout }
+}
+</script>

@@ -1,0 +1,61 @@
+.sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 71px 0;
+
+    img {
+        margin-bottom: 72px;
+    }
+
+
+    .title {
+        margin-bottom: 48px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: $baseTextColor; 
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .input:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    .condition {
+        width: 100%;
+        margin-top: 32px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        color: $baseTextColor;
+    }
+
+
+    .condition-text {
+        margin-left: 12px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: $baseTextColor;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #9578ED;
+    }
+}

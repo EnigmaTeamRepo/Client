@@ -1,0 +1,21 @@
+@import '~@/scss/vars';
+.checkbox{
+    display: flex;
+
+
+    &-body {
+        width: 28px;
+        height: 28px;
+        background: #ECE9F3;
+        border-radius: 8px;
+
+        transition: all 0.1s ease;
+    }
+
+    input:checked ~ .checkbox-body {
+        background-color: #9578ED;
+        background-image: url('~@/assets/img/checkbox-icon.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+}

@@ -1,0 +1,35 @@
+@import '~@/scss/_vars.scss';
+
+.admin {
+    .title {
+        margin-bottom: 24px;
+        color: $baseTextColor;
+
+        span {
+            &:first-child  {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 39px;
+            }
+    
+    
+            &:last-child {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        button:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+}

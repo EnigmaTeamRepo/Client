@@ -1,0 +1,94 @@
+@import '@/scss/_vars.scss';
+
+.user-item {
+    justify-content: flex-start;
+    padding: 10px 16px;
+    background: #F4F2F7;
+    border-radius: 12px;
+    color: $baseTextColor;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .date {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .name {
+        margin-bottom: 4px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .birthdate,
+    .passport,
+    .sex {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .birthdate {
+        margin-right: 24px;
+    }
+
+    .passport {
+        margin-right: 18px;
+    }
+
+    .passport-issued-by {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .passport-issued-by,
+    .born-place {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .born-place {
+        margin-bottom: 12px;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .action-btn {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        background: #9578ED;
+        border-radius: 8px;
+        border: none;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .action-btn--warn {
+        background-color: #FB9D9D;
+    }
+
+}

@@ -1,0 +1,38 @@
+@import '~@/scss/_vars.scss';
+
+.input {
+    position: relative;
+
+    input {
+        width: 100%;
+        min-height: 64px;
+        padding: 22px 48px 14px 24px;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $baseTextColor;
+        background: #ECE9F3;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .label {
+        position: absolute;
+        top: 22px;
+        left: 24px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #8D839D;
+
+        transition: all 0.2s ease-in;
+    }
+
+    input:focus + .label,
+    input:not(:placeholder-shown) + .label {
+      top: 8px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+}
