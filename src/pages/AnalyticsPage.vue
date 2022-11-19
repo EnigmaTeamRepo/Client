@@ -1,7 +1,7 @@
 <template lang="">
-    <div>
-        Analytics
-    </div>
+  <div>
+    Analytics
+  </div>
 </template>
 <script>
 export default {

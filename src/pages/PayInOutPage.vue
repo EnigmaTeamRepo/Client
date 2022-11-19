@@ -1,7 +1,7 @@
 <template lang="">
-    <div>
-        PayIn-Out
-    </div>
+  <div>
+    PayIn-Out
+  </div>
 </template>
 <script>
 export default {
