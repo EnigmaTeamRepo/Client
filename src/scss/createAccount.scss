@@ -1,0 +1,75 @@
+@import '@/scss/_vars.scss';
+
+.create-account {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: $baseTextColor;
+
+    h2 {
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    p {
+        margin-bottom: 32px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .title {
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .create-account-group {
+        margin-bottom: 48px;
+    }
+
+    li {
+        min-height: 64px;
+        padding: 12px 16px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        background: #ECE9F3;
+        border-radius: 8px;
+
+        &:not(:last-child) {
+            margin-bottom: 19px;
+        }
+
+        img {
+            margin-right: 14px;
+        }
+
+        &.selected::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            width: 32px;
+            height: 32px;
+            background: #9578ED;
+            border-radius: 1000px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url('~@/assets/img/checkbox-icon.svg');
+        }
+    }
+
+    .condition {
+        margin: 32px auto 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
