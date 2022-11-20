@@ -25,6 +25,15 @@ const routes = [
             layout: 'HomeLayout',
         },
     },
+
+    {
+        path: '/Buy-sell',
+        name: 'Buy-sell',
+        component: () => import('../pages/BuySellPage.vue'),
+        meta: {
+            layout: 'DefaultLayout',
+        },
+    },
     {
         path: '/CreateAccount',
         name: 'CreateAccount',

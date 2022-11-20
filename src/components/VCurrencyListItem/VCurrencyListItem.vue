@@ -25,17 +25,26 @@ export default {
 
     setup(props) {
         const currencyNames = {
-            "643": 'руб'
+            "643": 'руб',
+            '840': 'Доллар',
+            '978': 'Евро'
+
         }
         const currencyColors = {
-            "643": '#E88717'
+            "643": '#E88717',
+            '840': '#50B600',
+            '978': '#32A2E1'
         }
         const bgColors = {
-            "643": '#FFCA2B'
+            "643": '#FFCA2B',
+            '840': '#73F010',
+            '978': '#3BE9E9'
         }
 
         const currencySymbols = {
-            "643": '₽'
+            "643": '₽',
+            '840': '$',
+            '978': '€'
         }
         const valueFormatted = props.value.toLocaleString()
         const currency = currencyNames[props.currencyCode]

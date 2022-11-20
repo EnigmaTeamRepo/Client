@@ -1,0 +1,59 @@
+.chart {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(149, 120, 237, 0.24);
+    border-radius: 16px;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 9px 4px;
+
+        .name {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px; 
+        }
+
+        .value {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+        }
+
+        .info {
+            padding: 3px 4px 4px 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: right;
+            color: #FFFFFF;
+            background: #FB9D9D;
+            border-radius: 8px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 17px 17px 20px 17px;
+    }
+
+    .base-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-height: 45px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &--accent {
+            background-color: #9578ED;
+            color: #fff;
+        }
+    }
+}
