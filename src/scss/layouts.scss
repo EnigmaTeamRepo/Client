@@ -3,6 +3,9 @@
     flex-direction: column;
     min-height: 100vh;
     padding: 0 32px 0 32px;
+    max-width: 375px;
+    margin: 0 auto;
+    position: relative;
 
     &--home {
         padding-bottom: 110px;

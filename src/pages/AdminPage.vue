@@ -43,6 +43,7 @@
         data() {
             return {
                 currentUsers: 0,
+                // Test data
                 newUsers: [{
                     "id": 1,
                     "login": "admin",

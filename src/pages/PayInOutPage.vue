@@ -51,6 +51,7 @@
 import { computed, reactive, ref } from '@vue/reactivity'
 import {maskAmount} from '@/helpers/maskAmount'
 import {normalizeNumber} from '@/helpers/utils'
+import { crurrencyName, crurrencySymbol } from '@/helpers/currency'
 
 export default {
   name: 'PayInOutPage',
@@ -58,24 +59,13 @@ export default {
     const currentState = ref(0)
     const balance = ref(55000)
     const inputValue = ref('')
+    // Test data
     const account = reactive(   {
       "id": 1,
       "currency": "643",
       "bill_number": "4c217771-684a-4083-8ac2-cece9a560b0f",
       "bill_amount": 0
       })
-    
-    const crurrencySymbol = {
-      '643': '₽',
-      '840': '$',
-      '978': '€'
-    }
-
-    const crurrencyName = {
-      '643': 'Рубль',
-      '840': 'Доллар',
-      '978': 'Евро'
-    }
 
     const symbol = crurrencySymbol[account.currency]
     const name = crurrencyName[account.currency]

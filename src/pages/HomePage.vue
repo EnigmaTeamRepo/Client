@@ -24,6 +24,7 @@
         <VCurrencyListItem
           :currency-code="643"
           :value="0"
+          @click="toAccount(643)"
         />
 
         <router-link
@@ -46,9 +47,15 @@
     </VList>
 
     <VList :title="'История операций'">
-      <ul v-if="user.history && user.history.length">
-        <li />
-      </ul>
+      <template v-if="user.history && user.history.length">
+        <ul>
+          <li />
+        </ul>
+        <router-link :to="{name: 'History'}">
+          открыть историю операций
+        </router-link>
+      </template>
+   
 
       <p v-else>
         нет ни одной операции :(
@@ -57,27 +64,35 @@
   </div>
 </template>
 <script>
-import { computed, reactive } from '@vue/reactivity'
+import { computed } from '@vue/reactivity'
 import VList from '@/components/VList/VList.vue'
 import VCurrencyListItem from '@/components/VCurrencyListItem/VCurrencyListItem.vue'
+import { useRouter } from 'vue-router'
+import useUserStore from '@/stores/user'
+
 export default {
     name: 'VHome',
   components: { VList, VCurrencyListItem },
     setup() {
-      const user = reactive({
-        name: 'Никита',
-        history: null,
-        balance: 0,
-        accounts: []
-      })
+      const router = useRouter()
+      const store = useUserStore()
 
+              // Test data
+      const user = store.user
+
+      function toAccount(currencyCode) {
+        router.push({name: 'Account', query: {
+          currency: currencyCode
+        }})
+      }
 
       const balanceFormatted = computed(() => {
         return (user.balance).toLocaleString()
       })
       return {
         user,
-        balanceFormatted
+        balanceFormatted,
+        toAccount
       }
     }
 }

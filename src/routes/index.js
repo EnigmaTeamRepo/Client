@@ -1,4 +1,5 @@
 import * as VueRouter from 'vue-router'
+import authMiddleware from './middlewares/authMiddleware'
 
 const routes = [
     {
@@ -27,6 +28,24 @@ const routes = [
     },
 
     {
+        path: '/Account',
+        name: 'Account',
+        component: () => import('../pages/AccountPage.vue'),
+        meta: {
+            layout: 'DefaultLayout',
+        },
+    },
+
+    {
+        path: '/History',
+        name: 'History',
+        component: () => import('../pages/HistoryPage.vue'),
+        meta: {
+            layout: 'DefaultLayout',
+        },
+    },
+
+    {
         path: '/Buy-sell',
         name: 'Buy-sell',
         component: () => import('../pages/BuySellPage.vue'),
@@ -48,7 +67,11 @@ const routes = [
         component: () => import('../pages/SignUpPage.vue'),
         meta: {
             layout: 'DefaultLayout',
+            middleware: {
+                ignore: [authMiddleware],
+            },
         },
+       
     },
 
     {
@@ -57,6 +80,9 @@ const routes = [
         component: () => import('../pages/SignInPage.vue'),
         meta: {
             layout: 'DefaultLayout',
+            middleware: {
+                ignore: [authMiddleware],
+            },
         },
     },
 
