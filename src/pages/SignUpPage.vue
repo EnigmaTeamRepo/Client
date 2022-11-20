@@ -19,7 +19,7 @@
 
       <VInput :title="'придумайте пароль'">
         <input
-          type="text"
+          type="password"
           placeholder=" "
         >
       </VInput>

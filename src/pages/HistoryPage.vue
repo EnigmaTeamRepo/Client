@@ -1,5 +1,6 @@
 <template>
   <div class="history">
+    <!--@TODO вынести в layout  -->
     <button
       class="base-button base-button--accent"
       style="margin-bottom: 24px"

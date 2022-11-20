@@ -1,10 +1,17 @@
 import useUserStore from '@/stores/user'
 
-export default ({ redirect }) => {
+export default async ({ redirect }) => {
     const store = useUserStore()
-    console.log(store);
     
     if (!store.user) {
-      redirect('/SignIn')
+        try {
+            const result = await store.getUser() 
+            
+            if(!result) {
+                redirect('/SignIn')
+            } 
+        } catch (e) {
+            console.log(e);
+        }
     }
   }
