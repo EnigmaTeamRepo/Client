@@ -1,4 +1,3 @@
-import { API } from '@/api'
 import { defineStore } from 'pinia'
 
 export default defineStore('user', {
@@ -8,13 +7,8 @@ export default defineStore('user', {
         }
     },
     actions: {
-        getUser() {
-            return new Promise(resolve => {
-                API.getUser().then(response => {
-                    this.user = response.data
-                    resolve(true)
-                })
-            })
+        getUser(user) {
+            this.user = user
         },
     }
 })

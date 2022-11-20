@@ -48,11 +48,13 @@
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { API } from '@/api';
+import useUserStore from '@/stores/user'
 
 export default {
     name: 'VSignIn',
 
     setup() {
+      const store = useUserStore()
       const router = useRouter()
       const formControls = reactive({
         phone: '',
@@ -67,8 +69,13 @@ export default {
             })
 
             if(response.status === 200) {
-              if(response.data.role === 'ADMIN') router.push({name: 'Admin'})
-              else router.push({name: 'Home'})
+              const userResponse = await API.getUser() 
+              
+              if(userResponse.status === 200) {
+                store.getUser(userResponse.data)
+                if(response.data.role === 'ADMIN') router.push({name: 'Admin'})
+                else router.push({name: 'Home'})
+              }
             }
           } catch (e) {
             // @TODO показ ошибки пользователю
